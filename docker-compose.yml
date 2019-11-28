@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  fast-data-dev:
+    image: landoop/fast-data-dev:2.3.0
+    ports:
+      - "2181:2181"
+      - "3030:3030"
+      - "3031:3031"
+      - "8081-8083:8081-8083"
+      - "9581-9585:9581-9585"
+      - "9092-9093:9092-9093"
+    environment:
+      - "ENABLE_SSL=1"
+      - "RUNTESTS=0"
+      - "RUNNING_SAMPLEDATA=0"
+      - "FORWARDLOGS=0"
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: sandbox
+      POSTGRES_USER: sandbox
+      POSTGRES_DB: sandbox

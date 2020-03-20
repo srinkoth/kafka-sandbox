@@ -5,6 +5,10 @@ Kafka Development environment in one command
 
 You will need Docker and Docker Compose installed and the Docker daemon running.
 
+Ensure that that `ADV_HOST` variable is set to the LAN IP of the machine running the Docker containers. 
+
+You will also need an entry in your `/etc/hosts` file on the client machine pointing the IP to the container ID. Something like this: `192.168.1.14 b948cea973d3`.
+
 ```bash
 git clone git@github.com/vipertoothlabs/kafka-sandbox.git
 cd kafka-sandbox

@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 services:
   fast-data-dev:
     image: landoop/fast-data-dev:latest
@@ -14,17 +14,5 @@ services:
       - "RUNTESTS=0"
       - "RUNNING_SAMPLEDATA=0"
       - "FORWARDLOGS=0"
-      - "ADV_HOST=192.168.1.15"
+      - "ADV_HOST=192.168.1.9"
       - "SSL_EXTRA_HOSTS=192.168.1.*"
-  prometheus:
-    image: prom/prometheus:latest
-    ports:
-      - "9090:9090"
-  postgres:
-    image: postgres:latest
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_PASSWORD: sandbox
-      POSTGRES_USER: sandbox
-      POSTGRES_DB: sandbox
